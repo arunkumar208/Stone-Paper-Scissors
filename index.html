@@ -17,7 +17,7 @@
 
    <script>
      let game=["Stone","Paper","Scissors"]
-     let score=0
+    
      var userpoint=0;
     var compoint=0;
      function playgame(userchoice)
@@ -31,7 +31,7 @@
             (userchoice==="Scissors"&&comchoice==="Paper")
           )
           {
-            score++;
+           
             userpoint++;
           }
           else{
@@ -39,11 +39,15 @@
           }
           if(userpoint==10){
             alert("You won")
+              userpoint=0
+              compoint=0
           }
           if(compoint==10){
             alert("you loss")
+              userpoint=0
+              compoint=0
           }
-        document.getElementById("score").textContent = "Score:"+score;
+        document.getElementById("score").textContent = "Score:"+userpoint;
         document.getElementById("compoint").textContent = "Opponent Score:"+compoint;
 
      }
