@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stone-Paper_Scissors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+   <button onclick="playgame('Stone')">Stone<img src="ima/jpj1.png" alt="" style="width: 100px;height: 100px;"> </button>
+   <button onclick="playgame('Paper')">Paper<img src="ima/jpj2.png" alt="" style="width: 100px;height: 100px;"></button>
+   <button onclick="playgame('Scissors')">Scissors<img src="ima/jpj3.png" alt="" style="width: 100px;height: 100px;"></button>
+</div>
+   <p id="score">score:</p>
+   <p id="compoint">Opponent score:</p>
+
+   <script>
+     let game=["Stone","Paper","Scissors"]
+     let score=0
+     var userpoint=0;
+    var compoint=0;
+     function playgame(userchoice)
+     {
+          let comchoice=game[Math.floor(Math.random()*3)]
+            
+         
+          if(
+            (userchoice==="Stone"&&comchoice==="Scissors")||
+            (userchoice==="Paper"&&comchoice==="Stone")||
+            (userchoice==="Scissors"&&comchoice==="Paper")
+          )
+          {
+            score++;
+            userpoint++;
+          }
+          else{
+            compoint++;
+          }
+          if(userpoint==10){
+            alert("You won")
+          }
+          if(compoint==10){
+            alert("you loss")
+          }
+        document.getElementById("score").textContent = "Score:"+score;
+        document.getElementById("compoint").textContent = "Opponent Score:"+compoint;
+
+     }
+   </script>
+</body>
+
+</html>
